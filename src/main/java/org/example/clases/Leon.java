@@ -1,6 +1,10 @@
 package org.example.clases;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Leon {
+    static Logger log = LogManager.getLogger("prueba");
     private String nombre;
     private int edad;
     private Boolean esAlfa;
@@ -23,10 +27,6 @@ public class Leon {
         return edad;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
     public Boolean getEsAlfa() {
         return esAlfa;
     }
@@ -42,5 +42,24 @@ public class Leon {
                 ", edad=" + edad +
                 ", esAlfa=" + esAlfa +
                 '}';
+    }
+
+    public Boolean esAlfaMayor() {
+        Boolean esAM = esAlfa && edad > 10;
+        if (esAM) {
+            log.info("el Leon es mayor y alfa " + this.esAlfa + " " + this.edad);
+        }
+        return esAM;
+    }
+
+    public void setEdad(Integer edad) {
+
+        if (edad >= 0) {
+            this.edad = edad;
+        } else {
+            log.error("ingresó un edad inválida valor:" + edad);
+            throw new IllegalArgumentException("Ingrese una edad válida");
+
+        }
     }
 }

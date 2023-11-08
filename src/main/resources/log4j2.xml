@@ -9,7 +9,7 @@ Esta es la etiqueta raíz del archivo de configuración.
 
 
 -->
-<Configuration status="WARN">
+<Configuration status="WARM">
 
 
     <!--
@@ -59,7 +59,7 @@ Esta es la etiqueta raíz del archivo de configuración.
         <Logger name="prueba" level="info" additivity="true">
             <AppenderRef ref="Console"/>
         </Logger>
-        <Root level="info">
+        <Root level="warm">
             <AppenderRef ref="File"/>
         </Root>
     </Loggers>
