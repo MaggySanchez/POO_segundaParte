@@ -59,7 +59,7 @@ Esta es la etiqueta raíz del archivo de configuración.
         <Logger name="prueba" level="info" additivity="true">
             <AppenderRef ref="Console"/>
         </Logger>
-        <Root level="warm">
+        <Root level="info">
             <AppenderRef ref="File"/>
         </Root>
     </Loggers>

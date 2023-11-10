@@ -1,6 +1,10 @@
 package org.example.clases;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Cliente {
+    static Logger log = LogManager.getLogger(Cliente.class);
     private Long id;
     private String nombre;
 
@@ -24,6 +28,6 @@ public class Cliente {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-
+        log.info("Se ha cambiado el nombre a: "+this.nombre);
     }
 }
